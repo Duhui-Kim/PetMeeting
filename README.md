@@ -1,13 +1,18 @@
 # Pet Meeting
 
+[0. 프로젝트 개요](#0-프로젝트-개요)
 
-- [0. 프로젝트 개요](#0-프로젝트-개요)
-- [1. 팀원 정보 및 업무 분담 내역](#1-팀원-정보-및-업무-분담-내역)
-- [2. 프로젝트 결과](#2-프로젝트-결과)
-- [3. API 명세서](#3-API-명세서)
-- [4. ERD](#4-ERD)
-- [5. System Architecture](#5-System-Architecture)
-- [6. 느낀점 및 아쉬운점](#6-느낀점-및-아쉬운점)
+[1. 팀원 정보 및 업무 분담 내역](#1-팀원-정보-및-업무-분담-내역)
+
+[2. 프로젝트 결과](#2-프로젝트-결과)
+
+[3. API 명세서](#3-API-명세서)
+
+[4. ERD](#4-ERD)
+
+[5. System Architecture](#5-System-Architecture)
+
+[6. 느낀점 및 아쉬운점](#6-느낀점-및-아쉬운점)
 
 
 
@@ -32,11 +37,14 @@
 
 ## 1. 팀원 정보 및 업무 분담 내역
 
-| 이름   | 역할              | 설명 |
-| ------ | ----------------- | ---- |
-| 이재홍 | 팀장, IoT, Infra  |      |
-| 김두희 | BackEnd, FrontEnd |      |
-|        |                   |      |
+| 이름   | 역할                                                         | 설명 |
+| ------ | ------------------------------------------------------------ | ---- |
+| 이재홍 | - 팀장<br /> - IoT : <br /> - OpenVidu : <br /> - Infra :    |      |
+| 안희준 | - Iot : 3D 모델링 <br />- 기타 : 서비스 이름 생성            |      |
+| 김두희 | - Backend : <br />- Frontend : <br />- 설계 : ERD 설계 및 최종 마무리, API 명세 작성, 목업 작성 ([Figma](https://www.figma.com/file/CJ9HEZLxjZVNNuVOknD77B/Untitled?type=design&node-id=0-1&mode=design&t=toRhlsrwhOhdLvyw-0)) |      |
+| 조윤영 | - Backend : <br />- Frontend : <br />- 기타 : UCC 제작, Logo 및 Favicon 제작 |      |
+| 이민웅 | - Frontend : <br />- 설계 : 컴포넌트 구조 설계, 목업 작성 ([Figma](https://www.figma.com/file/CJ9HEZLxjZVNNuVOknD77B/Untitled?type=design&node-id=0-1&mode=design&t=toRhlsrwhOhdLvyw-0)) |      |
+| 김영우 | - Frontend : <br />- Infra : <br />- 기타 : 발표             |      |
 
 <br>
 
@@ -52,7 +60,7 @@
 
 ## 3. API 명세서
 
-![Pet Meeting API 명세](./exec/Pet Meeting API 명세.png)
+![Pet Meeting API 명세](https://github.com/Duhui-Kim/BoardProject/assets/118238663/f809ca29-a9fa-4e74-b144-dd0729786f5d)
 
 <br>
 
