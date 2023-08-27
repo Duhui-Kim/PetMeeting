@@ -1,22 +1,12 @@
 # Pet Meeting
 
-[0. 프로젝트 개요](#0. 프로젝트 개요)
-
-[1. 팀원 정보 및 업무 분담 내역](#1. 팀원 정보 및 업무 분담 내역)
-
-[2. UCC](#2. UCC)
-
-[3. 프로젝트 결과](#3. 프로젝트 결과)
-
-[4. API 명세서](#4. API 명세서)
-
-[5. ERD](#5. ERD)
-
-[6. System Architecture](#6. System Architecture)
-
-[7. 느낀점 및 아쉬운점](#7. 느낀점 및 아쉬운점)
-
-[7. 느낀점 및 아쉬운점]: #7.느낀점및아쉬운점
+[0. 프로젝트 개요]: #0-프로젝트-개요
+[1. 팀원 정보 및 업무 분담 내역]: #1-팀원-정보-및-업무-분담-내역
+[2. 프로젝트 결과]: #2-프로젝트-결과
+[3. API 명세서]: #3-API-명세서
+[4. ERD]: #4-ERD
+[5. System Architecture]: #5-System-Architecture
+[6. 느낀점 및 아쉬운점]: #6-느낀점-및-아쉬운점
 
 
 
@@ -49,13 +39,7 @@
 
 <br>
 
-## 2. UCC
-
-<video src="./exec/PET MEETING 광고.mp4"></video>
-
-<br>
-
-## 3. 프로젝트 결과 
+## 2. 프로젝트 결과 
 
 #### 	1) 
 
@@ -65,25 +49,25 @@
 
 <br>
 
-## 4. API 명세서
+## 3. API 명세서
 
 ![Pet Meeting API 명세](./exec/Pet Meeting API 명세.png)
 
 <br>
 
-## 5. ERD
+## 4. ERD
 
 ![ERD](https://github.com/Duhui-Kim/HPPT_HealthyPacePersonalTrainer/assets/118238663/36e3137a-f54a-4fbe-b3d4-a1558833921f)
 
 <br>
 
-## 6. System Architecture
+## 5. System Architecture
 
 ![System Architecture](https://github.com/Duhui-Kim/HPPT_HealthyPacePersonalTrainer/assets/118238663/fea5500f-eb68-4ae3-be15-d4d484e4e961)
 
 <br>
 
-## 7. 느낀점 및 아쉬운점
+## 6. 느낀점 및 아쉬운점
 
 <느낀점>
 
