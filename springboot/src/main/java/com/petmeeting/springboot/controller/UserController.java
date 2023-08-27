@@ -20,7 +20,7 @@ import java.util.Map;
 @RequestMapping("/api/v1/user")
 public class UserController {
     private final UserService userService;
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
     private final String REFRESH_TOKEN = "RefreshToken";
 
     @Operation(

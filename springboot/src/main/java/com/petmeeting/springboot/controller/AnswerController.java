@@ -21,6 +21,7 @@ public class AnswerController {
             summary = "문의게시글 답변 작성",
             description = "문의게시글 답변 작성 결과를 반환합니다. 문의게시글 상태도 true(답변완료)로 변경합니다."
     )
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     public ResponseEntity<AnswerResDto> createAnswer(@RequestBody AnswerReqDto answerReqDto) {
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -31,6 +32,7 @@ public class AnswerController {
             summary = "문의게시글 답변 삭제",
             description = "문의게시글 답변을 삭제합니다."
     )
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/{answerNo}")
     public ResponseEntity<MessageDto> deleteAnswer(@PathVariable Integer answerNo) {
         answerService.deleteAnswer(answerNo);

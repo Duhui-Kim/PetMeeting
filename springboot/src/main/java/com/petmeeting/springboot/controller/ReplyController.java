@@ -20,7 +20,7 @@ import java.util.List;
 public class ReplyController {
 
     private final ReplyService replyService;
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
 
     @Operation(
             summary = "입양후기 댓글(일반, 보호소)",

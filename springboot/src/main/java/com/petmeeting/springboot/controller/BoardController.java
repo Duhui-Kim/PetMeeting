@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,13 +19,14 @@ import java.util.List;
 public class BoardController {
 
     private final BoardService boardService;
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
 
     @Operation(
             summary = "입양후기 등록",
             description = "후기 등록 후 후기글 고유번호를 반환합니다.\n" +
                     "입양하지 않은 회원은 작성할 수 없습니다."
     )
+    @PreAuthorize("hasRole('ROLE_MEMBER')")
     @PostMapping
     public ResponseEntity<BoardCreateResDto> createBoard(@RequestBody BoardCreateReqDto boardCreateReqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.status(HttpStatus.CREATED).body(boardService.createBoard(boardCreateReqDto, token));
@@ -52,6 +54,7 @@ public class BoardController {
             summary = "입양후기 수정",
             description = "입양후기를 수정합니다. 본인 게시글이 아닐 경우 수정 불가"
     )
+    @PreAuthorize("hasRole('ROLE_MEMBER')")
     @PutMapping("/{boardNo}")
     public ResponseEntity<BoardResDto> updateBoard(@PathVariable Integer boardNo, @RequestBody BoardUpdateReqDto boardUpdateReqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.ok(boardService.updateBoard(boardNo, boardUpdateReqDto, token));
@@ -61,6 +64,7 @@ public class BoardController {
             summary = "입양후기 삭제",
             description = "입양후기를 삭제합니다. 본인 게시글이 아닐 경우 삭제 불가"
     )
+    @PreAuthorize("hasRole('ROLE_MEMBER')")
     @DeleteMapping("/{boardNo}")
     public ResponseEntity<MessageDto> deleteBoard(@PathVariable Integer boardNo, @RequestHeader(ACCESS_TOKEN) String token) {
         boardService.deleteBoard(boardNo, token);

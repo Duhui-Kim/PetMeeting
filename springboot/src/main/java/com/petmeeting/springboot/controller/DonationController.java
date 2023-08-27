@@ -16,13 +16,14 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/donation")
 public class DonationController {
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
     private final DonateService donateService;
 
     @Operation(
             summary = "후원하기",
             description = "사용자가 강아지에게 후원합니다. 남은 포인트를 반환받습니다."
     )
+    @PreAuthorize("hasRole('ROLE_MEMBER')")
     @PostMapping
     public ResponseEntity<DonateResDto> donateToDog(@RequestBody DonateReqDto donateReqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.ok(donateService.donateToDog(donateReqDto, token));

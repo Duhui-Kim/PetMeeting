@@ -21,7 +21,7 @@ import java.util.List;
 public class ShelterController {
 
     private final ShelterService shelterService;
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
 
     @Operation(
             summary = "보호소 고유번호로 검색",

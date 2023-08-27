@@ -18,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/inquiry")
 public class InquiryController {
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
     private final InquiryService inquiryService;
     @Operation(
             summary = "문의게시글 작성",

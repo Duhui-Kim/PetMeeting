@@ -27,7 +27,7 @@ import java.util.Map;
 public class BroadcastController {
 
     private final BroadcastService broadcastService;
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
     private final Long CONTROL_TIME = 300L; // 5분 설정
 
     @Operation(
@@ -68,7 +68,7 @@ public class BroadcastController {
             description = "보호소가 방송을 시작합니다."
     )
     @PostMapping
-//    @PreAuthorize("hasRole('SHELTER')")
+    @PreAuthorize("hasRole('SHELTER')")
     public ResponseEntity<MessageDto> startBroadcast(@RequestBody BroadcastReqDto broadcastReqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         broadcastService.startBroadcast(broadcastReqDto, token);
         return ResponseEntity.ok(MessageDto.msg("Start Broadcast"));
@@ -79,7 +79,7 @@ public class BroadcastController {
             description = "보호소가 방송을 종료합니다."
     )
     @DeleteMapping
-//    @PreAuthorize("hasRole('SHELTER')")
+    @PreAuthorize("hasRole('SHELTER')")
     public ResponseEntity<MessageDto> stopBroadcast(@RequestHeader(ACCESS_TOKEN) String token) {
         broadcastService.stopBroadcast(token);
         sseEmitters.remove();

@@ -19,12 +19,13 @@ import java.util.List;
 public class AdoptionController {
 
     private final AdoptionService adoptionService;
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
 
     @Operation(
             summary = "입양신청서를 등록합니다.",
             description = "등록 성공시 등록된 신청서를 반환합니다."
     )
+    @PreAuthorize("hasRole('ROLE_MEMBER')")
     @PostMapping
     public ResponseEntity<AdoptionResDto> registerAdoption(@RequestBody AdoptionReqDto adoptionCreateReqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -45,6 +46,7 @@ public class AdoptionController {
             description = "입양신청 수정 결과를 반환합니다.\n" +
                     "adoptionStatus가 '대기중'이 아니면 요청을 거부합니다."
     )
+    @PreAuthorize("hasRole('ROLE_MEMBER')")
     @PutMapping("/{adoptionNo}")
     public ResponseEntity<AdoptionResDto> updateAdoption(@PathVariable Integer adoptionNo, @RequestBody AdoptionUpdateReqDto adoptionUpdateReqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.ok(adoptionService.updateAdoption(adoptionNo, adoptionUpdateReqDto, token));
@@ -55,6 +57,7 @@ public class AdoptionController {
             description = "삭제시 'Delete Success'를 반환합니다.\n" +
                     "adoptionStatus가 '채택'이면 요청을 거부합니다."
     )
+    @PreAuthorize("hasRole('ROLE_MEMBER')")
     @DeleteMapping("/{adoptionNo}")
     public ResponseEntity<MessageDto> deleteAdoption(@PathVariable Integer adoptionNo, @RequestHeader(ACCESS_TOKEN) String token) {
         adoptionService.deleteAdoption(adoptionNo, token);
@@ -67,6 +70,7 @@ public class AdoptionController {
                     "작성자의 입양여부가 true로 변경됩니다.\n" +
                     "해당 유기견의 모든 adoptionStatus가 '미채택'으로 변경됩니다."
     )
+    @PreAuthorize("hasRole('ROLE_SHELTER')")
     @PutMapping("/status/{adoptionNo}")
     public ResponseEntity<AdoptionResDto> updateAdoptionStatus(@PathVariable Integer adoptionNo, @RequestBody AdoptStatusUpdateReqDto adoptStatusUpdateDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.ok(adoptionService.updateAdoptionStatus(adoptionNo, adoptStatusUpdateDto, token));

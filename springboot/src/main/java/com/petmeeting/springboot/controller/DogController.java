@@ -24,13 +24,14 @@ import java.util.List;
 @RequestMapping("/api/v1/dog")
 public class DogController {
 
-    private final String ACCESS_TOKEN = "AccessToken";
+    private final String ACCESS_TOKEN = "Authorization";
     private final DogService dogService;
 
     @Operation(
             summary = "유기견 등록(CREATE)",
             description = "새로운 유기견을 등록합니다."
     )
+    @PreAuthorize("hasRole('ROLE_SHELTER')")
     @PostMapping
     public ResponseEntity<DogResDto> createDog(@RequestBody DogReqDto reqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -42,6 +43,7 @@ public class DogController {
             description = "해당 유기견의 보호 상태를 변경합니다. " +
                     "만약 '보호종료', '입양완료'가 되면 해당 유기견의 입양신청서가 모두 '미채택'으로 변경됩니다."
     )
+    @PreAuthorize("hasRole('ROLE_SHELTER')")
     @PutMapping("/status/{dogNo}")
     public ResponseEntity<DogResDto> updateDogStatus(@PathVariable Integer dogNo, @RequestBody DogStatusUpdateReqDto reqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.ok(dogService.updateDogStatus(dogNo, reqDto, token));
@@ -60,6 +62,7 @@ public class DogController {
             summary = "유기견 정보를 수정합니다.",
             description = "shelter의 번호와 유기견의 보호소가 일치하는 경우에만 수정됩니다."
     )
+    @PreAuthorize("hasRole('ROLE_SHELTER')")
     @PutMapping("/{dogNo}")
     public ResponseEntity<DogResDto> updateDog(@PathVariable Integer dogNo, @RequestBody DogReqDto registerDogReqDto, @RequestHeader(ACCESS_TOKEN) String token) {
         return ResponseEntity.ok(dogService.updateDog(dogNo, registerDogReqDto, token));
@@ -69,6 +72,7 @@ public class DogController {
             summary = "유기견 삭제",
             description = "해당 넘버의 유기견을 삭제합니다. 성공시 Delete Succuess 메세지를 반환합니다."
     )
+    @PreAuthorize("hasRole('ROLE_SHELTER')")
     @DeleteMapping("/{dogNo}")
     public ResponseEntity<MessageDto> deleteDog(@PathVariable Integer dogNo, @RequestHeader(ACCESS_TOKEN) String token) {
         dogService.deleteDog(dogNo, token);
