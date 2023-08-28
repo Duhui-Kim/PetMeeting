@@ -35,16 +35,21 @@
 
 <br>
 
-## 1. 팀원 정보 및 업무 분담 내역
+## 1. 팀원 정보 및 내가 맡은 업무
 
-| 이름   | 역할                                                         | 설명 |
-| ------ | ------------------------------------------------------------ | ---- |
-| 이재홍 | - 팀장<br /> - IoT : <br /> - OpenVidu : <br /> - Infra :    |      |
-| 안희준 | - Iot : 3D 모델링 <br />- 기타 : 서비스 이름 생성            |      |
-| 김두희 | - Backend : <br />- Frontend : <br />- 설계 : ERD 설계 및 최종 마무리, API 명세 작성, 목업 작성 ([Figma](https://www.figma.com/file/CJ9HEZLxjZVNNuVOknD77B/Untitled?type=design&node-id=0-1&mode=design&t=toRhlsrwhOhdLvyw-0)) |      |
-| 조윤영 | - Backend : <br />- Frontend : <br />- 기타 : UCC 제작, Logo 및 Favicon 제작 |      |
-| 이민웅 | - Frontend : <br />- 설계 : 컴포넌트 구조 설계, 목업 작성 ([Figma](https://www.figma.com/file/CJ9HEZLxjZVNNuVOknD77B/Untitled?type=design&node-id=0-1&mode=design&t=toRhlsrwhOhdLvyw-0)) |      |
-| 김영우 | - Frontend : <br />- Infra : <br />- 기타 : 발표             |      |
+| 이름   | 역할                                                         |
+| ------ | ------------------------------------------------------------ |
+| 이재홍 | - 팀장, IoT Leader, OpenVidu (Back), Infra    |
+| 안희준 | - Iot, 3D Modeling |
+| 김두희 | - Backend Leader, Frontend |
+| 조윤영 | - Backend, Frontend, UCC 제작 |
+| 이민웅 | - Frontend Leader |
+| 김영우 | - Frontend, Infra, 발표 |
+
+<br>
+<내가 담당한 업무>
+<br>
+- Backend : 카카오페이 결제, SSE, JWT 구현, Redis 적용, <br />   CRUD (회원, 보호소, 관리자, 입양후기게시글, 입양후기게시글댓글, 게시글 좋아요 및 취소, 후원, IoT, 입양신청, 결제내역) <br /><br />- Frontend : 입양후기 게시판 페이지, SSE 적용, 보호소 후원랭킹 페이지,  <br /><br />- 설계 : ERD 설계 및 최종 마무리, API 명세 작성, 목업 작성 ([Figma](https://www.figma.com/file/CJ9HEZLxjZVNNuVOknD77B/Untitled?type=design&node-id=0-1&mode=design&t=toRhlsrwhOhdLvyw-0))
 
 <br>
 
