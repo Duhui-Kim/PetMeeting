@@ -26,7 +26,7 @@
 
 | 분류              | 기술스택                   |
 | ----------------- | -------------------------- |
-| IoT               | C++                        |
+| IoT               | C                          |
 | Backend           | SpringBoot, JPA, Java      |
 | Frontend          | Node.js, React, JavaScript |
 | Database          | MariaDB, Redis             |
